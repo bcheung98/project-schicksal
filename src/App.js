@@ -1,12 +1,21 @@
 import * as React from "react";
 import {
-	BrowserRouter as Router,
-	Switch,
-	Route
+    BrowserRouter as Router,
+    Switch,
+    Route
 } from "react-router-dom";
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchCharacters } from "./redux/actions/fetchCharacters";
 import CharacterBrowser from "./components/characters/CharacterBrowser";
 
-const App = () => {
+const App = (props) => {
+
+    useEffect(() => {
+        fetchCharacters();
+    }, [])
+
+    let { fetchCharacters } = props;
 
     return (
         <Router basename="honkaidex">
@@ -17,4 +26,16 @@ const App = () => {
     );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        characters: state.characters,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchCharacters: () => dispatch(fetchCharacters()),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
