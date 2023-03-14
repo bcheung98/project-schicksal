@@ -1,10 +1,19 @@
 import * as React from "react";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from "react-router-dom";
+import CharacterBrowser from "./components/characters/CharacterBrowser";
 
 const App = () => {
+
     return (
-        <div>
-            teri teri
-        </div>
+        <Router basename="honkaidex">
+            <Switch>
+                <Route exact path="/" component={CharacterBrowser} />
+            </Switch>
+        </Router>
     );
 }
 
