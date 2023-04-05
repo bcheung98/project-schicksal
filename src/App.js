@@ -18,7 +18,7 @@ const App = (props) => {
     let { fetchCharacters } = props;
 
     return (
-        <Router basename="honkaidex">
+        <Router basename="project-elysia">
             <Switch>
                 <Route exact path="/" component={CharacterBrowser} />
             </Switch>
