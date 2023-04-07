@@ -21,7 +21,7 @@ const Nav = () => {
                     >
                         <CardHeader
                             avatar={
-                                null
+                                <Avatar src={(`${process.env.REACT_APP_URL}/Crystal_Rose.png`)} alt="PROJECT ELYSIA" sx={{ height: "64px", width: "64px" }} />
                             }
                             title={
                                 <Typography variant="h6" noWrap
