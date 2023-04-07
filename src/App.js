@@ -18,6 +18,9 @@ const theme = createTheme({
     font: {
         fontFamily: "Roboto, sans-serif",
         color: "white",
+    },
+    border: {
+        color: "rgb(83, 71, 60)",
     }
 });
 

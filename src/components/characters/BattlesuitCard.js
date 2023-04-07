@@ -8,7 +8,12 @@ const BattlesuitCard = (props) => {
     let { battlesuit } = props;
 
     return (
-        <Box>
+        <Box
+            sx={{
+                border: `1px solid ${theme.border.color}`,
+                width: "132px",
+            }}
+        >
             <img src={(`${process.env.REACT_APP_URL}/characters/battlesuits/icons/${battlesuit.name.split(" ").join("_")}_(Icon).png`)} alt={battlesuit.name} />
             <Typography sx={`${theme.font}`}>{battlesuit.name}</Typography>
         </Box>
