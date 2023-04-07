@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchCharacters } from "./redux/actions/fetchCharacters";
 import CharacterBrowser from "./components/characters/CharacterBrowser";
+import Nav from "./components/Nav";
 
 const App = (props) => {
 
@@ -19,6 +20,7 @@ const App = (props) => {
 
     return (
         <Router basename="project-elysia">
+            <Nav />
             <Switch>
                 <Route exact path="/" component={CharacterBrowser} />
             </Switch>
