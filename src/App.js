@@ -6,9 +6,20 @@ import {
 } from "react-router-dom";
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { fetchCharacters } from "./redux/actions/fetchCharacters";
 import CharacterBrowser from "./components/characters/CharacterBrowser";
 import Nav from "./components/Nav";
+
+const theme = createTheme({
+    appbar: {
+        backgroundColor: "rgb(20, 19, 27)",
+    },
+    font: {
+        fontFamily: "Roboto, sans-serif",
+        color: "white",
+    }
+});
 
 const App = (props) => {
 
@@ -19,12 +30,14 @@ const App = (props) => {
     let { fetchCharacters } = props;
 
     return (
-        <Router basename="project-elysia">
-            <Nav />
-            <Switch>
-                <Route exact path="/" component={CharacterBrowser} />
-            </Switch>
-        </Router>
+        <ThemeProvider theme={theme}>
+            <Router basename="project-elysia">
+                <Nav />
+                <Switch>
+                    <Route exact path="/" component={CharacterBrowser} />
+                </Switch>
+            </Router>
+        </ThemeProvider>
     );
 }
 

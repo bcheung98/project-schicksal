@@ -1,12 +1,15 @@
 import * as React from "react";
+import { useTheme } from "@mui/material/styles";
 import { AppBar, Box, Toolbar, Typography, Container, ButtonBase, Avatar, CardHeader } from "@mui/material";
 
 const Nav = () => {
 
+    const theme = useTheme();
+
     return (
         <AppBar position="static"
             sx={{
-                backgroundColor: "rgb(20, 19, 27)",
+                backgroundColor: `${theme.appbar.backgroundColor}`,
                 borderBottom: "1px solid rgb(83, 71, 60)"
             }}
         >
