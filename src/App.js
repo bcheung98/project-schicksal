@@ -44,6 +44,7 @@ const App = (props) => {
                     <Route exact path="/" component={CharacterBrowser} />
                     <Route exact path="/characters/:character_name/:battlesuit_name" children={<BattlesuitPage />} />
                 </Switch>
+                <br /><br />
             </Router>
         </ThemeProvider>
     );
