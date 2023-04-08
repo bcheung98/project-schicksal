@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/project-elysia/static/css/main.de49ea7f.css",
+    "main.js": "/project-elysia/static/js/main.118d53f2.js",
+    "index.html": "/project-elysia/index.html",
+    "main.de49ea7f.css.map": "/project-elysia/static/css/main.de49ea7f.css.map",
+    "main.118d53f2.js.map": "/project-elysia/static/js/main.118d53f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de49ea7f.css",
+    "static/js/main.118d53f2.js"
+  ]
+}
