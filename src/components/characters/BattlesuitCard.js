@@ -46,7 +46,13 @@ const BattlesuitCard = (props) => {
                     <Box sx={{ position: "absolute" }}>
                         <img src={`${process.env.REACT_APP_URL}/ranks/Valkyrie_${rank}.png`} alt={rank} style={{ width: "48px" }} />
                     </Box>
-                    <img src={(`${process.env.REACT_APP_URL}/characters/battlesuits/icons/${name.split(" ").join("_")}_(Icon).png`)} alt={name} style={{ backgroundColor: BattlesuitBackground(type), borderRadius: "10px" }} />
+                    <img src={(`${process.env.REACT_APP_URL}/characters/battlesuits/avatars/${name.split(" ").join("_")}_(Avatar).png`)} alt={name}
+                        style={{
+                            width: "132px",
+                            backgroundColor: BattlesuitBackground(type),
+                            borderRadius: "10px",
+                        }}
+                    />
                     <Typography
                         sx={{
                             textAlign: "center",
