@@ -16,6 +16,9 @@ const theme = createTheme({
     appbar: {
         backgroundColor: "rgb(20, 19, 27)",
     },
+    paper: {
+        backgroundColor: "rgb(25, 21, 26)"
+    },
     font: {
         fontFamily: "Roboto, sans-serif",
         color: "white",

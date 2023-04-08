@@ -31,7 +31,7 @@ const BattlesuitPage = (props) => {
             <React.Fragment>
                 <Grid container sx={{ mb: "20px" }}>
                     <Grid xs="auto">
-                        <Box sx={{ position: "absolute", left: "20px" }}>
+                        <Box sx={{ position: "absolute", left: "20px", top: "120px" }}>
                             <img src={`${process.env.REACT_APP_URL}/ranks/Valkyrie_${rank}.png`} alt={rank} />
                         </Box>
                         <img src={`${process.env.REACT_APP_URL}/characters/battlesuits/images/${name.split(" ").join("_")}.png`} alt={name}
@@ -40,14 +40,22 @@ const BattlesuitPage = (props) => {
                                 height: "660px",
                                 objectFit: "cover",
                                 marginLeft: "15px",
-                                borderLeft: `1px solid ${theme.border.color}`,
-                                borderRight: `1px solid ${theme.border.color}`,
-                                borderBottom: `1px solid ${theme.border.color}`,
-                                borderRadius: "0px 0px 5px 5px",
+                                marginTop: "20px",
+                                border: `1px solid ${theme.border.color}`,
+                                borderRadius: "5px",
+                                backgroundColor: `${theme.paper.backgroundColor}`
                             }}
                         />
                     </Grid>
-                    <Grid xs>
+                    <Grid xs
+                        sx={{
+                            mx: "25px",
+                            my: "20px",
+                            border: `1px solid ${theme.border.color}`,
+                            borderRadius: "5px",
+                            backgroundColor: `${theme.paper.backgroundColor}`
+                        }}
+                    >
                         <Box sx={{ display: "flex" }}>
                             <CustomTooltip title={type} arrow placement="top">
                                 <img src={`${process.env.REACT_APP_URL}/types/${type}.png`} alt={type}
@@ -79,6 +87,7 @@ const BattlesuitPage = (props) => {
                                 </Typography>
                             </Box>
                         </Box>
+                        <hr style={{ border: `.5px solid ${theme.border.color}`, margin: "15px" }} />
                         <Box sx={{ ml: "25px" }}>
                             <Typography
                                 variant="h6"
@@ -94,13 +103,15 @@ const BattlesuitPage = (props) => {
                                 <CustomTooltip title={damageType} arrow placement="top">
                                     <img src={`${process.env.REACT_APP_URL}/cores/Core_${damageType}.png`} alt={damageType} style={CoreStrengthImage} />
                                 </CustomTooltip>
-                                {coreStrengths.map(core => {
-                                    return (
-                                        <CustomTooltip title={core} arrow placement="top">
-                                            <img src={`${process.env.REACT_APP_URL}/cores/Core_${core.split(" ").join("_")}.png`} alt={core} key={core} style={CoreStrengthImage} />
-                                        </CustomTooltip>
-                                    )
-                                })}
+                                {
+                                    coreStrengths.map(core => {
+                                        return (
+                                            <CustomTooltip title={core} arrow placement="top">
+                                                <img src={`${process.env.REACT_APP_URL}/cores/Core_${core.split(" ").join("_")}.png`} alt={core} key={core} style={CoreStrengthImage} />
+                                            </CustomTooltip>
+                                        )
+                                    })
+                                }
                             </Box>
                         </Box>
                     </Grid>
