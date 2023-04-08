@@ -10,6 +10,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { fetchCharacters } from "./redux/actions/fetchCharacters";
 import CharacterBrowser from "./components/characters/CharacterBrowser";
 import Nav from "./components/Nav";
+import BattlesuitPage from "./components/characters/BattlesuitPage";
 
 const theme = createTheme({
     appbar: {
@@ -38,6 +39,7 @@ const App = (props) => {
                 <Nav />
                 <Switch>
                     <Route exact path="/" component={CharacterBrowser} />
+                    <Route exact path="/characters/:character_name/:battlesuit_name" children={<BattlesuitPage />} />
                 </Switch>
             </Router>
         </ThemeProvider>

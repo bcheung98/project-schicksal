@@ -5,7 +5,6 @@ import BattlesuitCard from "./BattlesuitCard";
 const CharacterBrowser = (props) => {
 
     let { characters } = props;
-    console.log(characters.characters);
 
     return (
         <React.Fragment>
@@ -13,8 +12,8 @@ const CharacterBrowser = (props) => {
                 <React.Fragment>
                     {characters.characters.map(char => {
                         return (
-                            <React.Fragment>
-                                {char.battlesuits.map(battlesuit => <BattlesuitCard key={battlesuit.name} battlesuit={battlesuit} />)}
+                            <React.Fragment key={char.character}>
+                                {char.battlesuits.map(battlesuit => <BattlesuitCard key={battlesuit.name} character={char.character} battlesuit={battlesuit} />)}
                             </React.Fragment>
                         )
                     })}
@@ -22,7 +21,6 @@ const CharacterBrowser = (props) => {
             }
         </React.Fragment>
     )
-
 }
 
 const mapStateToProps = (state) => {

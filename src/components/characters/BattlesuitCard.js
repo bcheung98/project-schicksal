@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, ButtonBase } from "@mui/material";
 
 const BattlesuitBackground = (battlesuitType) => {
     let color = "";
@@ -29,34 +29,37 @@ const BattlesuitBackground = (battlesuitType) => {
 const BattlesuitCard = (props) => {
 
     const theme = useTheme();
-    let { battlesuit } = props;
+    let { name, type, rank } = props.battlesuit;
 
     return (
-        <Box
-            sx={{
-                width: "132px",
-                backgroundColor: "rgb(225, 225, 225)",
-                border: `2px solid ${theme.border.color}`,
-                borderRadius: "10px",
-                m: "10px",
-            }}
-        >
-            <Box sx={{ position: "absolute" }}>
-                <img src={`${process.env.REACT_APP_URL}/ranks/Valkyrie_${battlesuit.rank}.png`} alt={battlesuit.rank} style={{ width: "48px" }} />
-            </Box>
-            <img src={(`${process.env.REACT_APP_URL}/characters/battlesuits/icons/${battlesuit.name.split(" ").join("_")}_(Icon).png`)} alt={battlesuit.name} style={{ backgroundColor: BattlesuitBackground(battlesuit.type), borderRadius: "10px" }} />
-            <Typography
-                sx={{
-                    textAlign: "center",
-                    fontFamily: "Roboto, sans-serif",
-                    fontWeight: "bold",
-                    color: "black",
-                }}>
-                {battlesuit.name}
-            </Typography>
+        <Box>
+            <ButtonBase disableRipple href={`/project-elysia/characters/${props.character.split(" ").join("_")}/${name.split(" ").join("_")}`} target="_blank">
+                <Box
+                    sx={{
+                        width: "132px",
+                        backgroundColor: "rgb(225, 225, 225)",
+                        border: `2px solid ${theme.border.color}`,
+                        borderRadius: "10px",
+                        m: "10px",
+                    }}
+                >
+                    <Box sx={{ position: "absolute" }}>
+                        <img src={`${process.env.REACT_APP_URL}/ranks/Valkyrie_${rank}.png`} alt={rank} style={{ width: "48px" }} />
+                    </Box>
+                    <img src={(`${process.env.REACT_APP_URL}/characters/battlesuits/icons/${name.split(" ").join("_")}_(Icon).png`)} alt={name} style={{ backgroundColor: BattlesuitBackground(type), borderRadius: "10px" }} />
+                    <Typography
+                        sx={{
+                            textAlign: "center",
+                            fontFamily: "Roboto, sans-serif",
+                            fontWeight: "bold",
+                            color: "black",
+                        }}>
+                        {name}
+                    </Typography>
+                </Box>
+            </ButtonBase>
         </Box>
     )
-
 }
 
 export default BattlesuitCard;
