@@ -117,7 +117,7 @@ const BattlesuitPage = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
-                <BattlesuitSkills skills={battlesuit.skills} />
+                <BattlesuitSkills battlesuit={name} skills={battlesuit.skills} />
             </React.Fragment>
         )
     }

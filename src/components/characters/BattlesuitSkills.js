@@ -1,7 +1,7 @@
 import * as React from "react";
 import parse from "html-react-parser";
 import { useTheme } from "@mui/material/styles";
-import { Box, Typography, Tabs, Tab, AppBar } from "@mui/material";
+import { Box, Typography, Avatar, AppBar, CardHeader } from "@mui/material";
 import { TabPanel, StyledTabs, StyledTab } from "../../helpers/CustomTabs";
 
 const BattlesuitSkills = (props) => {
@@ -54,11 +54,28 @@ const BattlesuitSkills = (props) => {
                     return (
                         <TabPanel key={key} value={tabValue} index={index}>
                             <Box>
-                                <Typography variant="h5">
-                                    <b><i>{parse(skills[key].name)}</i></b>
-                                </Typography>
-                                <br />
-                                <Typography variant="body1">
+                                <CardHeader
+                                    sx={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                    }}
+                                    avatar={
+                                        <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={`${process.env.REACT_APP_URL}/characters/battlesuits/skills/${props.battlesuit}/${key}.png`}
+                                            sx={{
+                                                width: "64px",
+                                                height: "64px",
+                                                border: "2px solid rgb(0, 195, 255)",
+                                                backgroundColor: "rgb(46, 133, 181)"
+                                            }}
+                                        />
+                                    }
+                                    title={
+                                        <Typography variant="h4">
+                                            <b><i>{parse(skills[key].name)}</i></b>
+                                        </Typography>
+                                    }
+                                />
+                                <Typography variant="body1" sx={{ ml: "20px" }}>
                                     {parse(skills[key].description)}
                                 </Typography>
                             </Box>
@@ -67,10 +84,28 @@ const BattlesuitSkills = (props) => {
                                 skills[key].subskills.map((subskill, index) => {
                                     return (
                                         <Box key={index}>
-                                            <Typography variant="h6">
-                                                <i>{parse(subskill.name)}</i>
-                                            </Typography>
-                                            <Typography variant="body1">
+                                            <CardHeader
+                                                sx={{
+                                                    display: "flex",
+                                                    alignItems: "center",
+                                                }}
+                                                avatar={
+                                                    <Avatar alt={`name.split(" ").join("_").toLowerCase()}_${key}`} src={`${process.env.REACT_APP_URL}/characters/battlesuits/skills/${props.battlesuit}/${key}${index + 1}.png`}
+                                                        sx={{
+                                                            width: "64px",
+                                                            height: "64px",
+                                                            border: "2px solid rgb(0, 195, 255)",
+                                                            backgroundColor: "rgb(46, 133, 181)"
+                                                        }}
+                                                    />
+                                                }
+                                                title={
+                                                    <Typography variant="h4">
+                                                        <b><i>{parse(subskill.name)}</i></b>
+                                                    </Typography>
+                                                }
+                                            />
+                                            <Typography variant="body1" sx={{ ml: "20px" }}>
                                                 {parse(subskill.description)}
                                             </Typography>
                                             <br />
