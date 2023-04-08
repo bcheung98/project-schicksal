@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import { CustomTooltip } from "../../helpers/CustomTooltip";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 
@@ -16,8 +17,16 @@ const BattlesuitPage = (props) => {
         battlesuit = character.battlesuits.find(battlesuit => battlesuit.name.split(" ").join("_") === battlesuit_name);
     }
 
+    const CoreStrengthImage = {
+        height: "40px",
+        marginRight: "5px",
+        padding: "2.5px",
+        border: `1px solid ${theme.border.color}`,
+        borderRadius: "5px",
+    }
+
     if (battlesuit !== undefined) {
-        let { name, type, rank } = battlesuit;
+        let { name, rank, type, damageType, coreStrengths } = battlesuit;
         return (
             <React.Fragment>
                 <Grid container sx={{ mb: "20px" }}>
@@ -40,14 +49,16 @@ const BattlesuitPage = (props) => {
                     </Grid>
                     <Grid xs>
                         <Box sx={{ display: "flex" }}>
-                            <img src={`${process.env.REACT_APP_URL}/types/${type}.png`} alt={type}
-                                style={{
-                                    height: "72px",
-                                    width: "72px",
-                                    marginLeft: "25px",
-                                    marginTop: "25px",
-                                }}
-                            />
+                            <CustomTooltip title={type} arrow placement="top">
+                                <img src={`${process.env.REACT_APP_URL}/types/${type}.png`} alt={type}
+                                    style={{
+                                        height: "72px",
+                                        width: "72px",
+                                        marginLeft: "25px",
+                                        marginTop: "25px",
+                                    }}
+                                />
+                            </CustomTooltip>
                             <Box sx={{ ml: "25px" }}>
                                 <Typography
                                     variant="h6"
@@ -66,6 +77,30 @@ const BattlesuitPage = (props) => {
                                 >
                                     {battlesuit.displayName ? battlesuit.displayName : name}
                                 </Typography>
+                            </Box>
+                        </Box>
+                        <Box sx={{ ml: "25px" }}>
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    mt: "15px",
+                                    fontStyle: "italic",
+                                    color: "rgb(0, 162, 232)",
+                                }}
+                            >
+                                Core Strengths
+                            </Typography>
+                            <Box sx={{ display: "flex", mt: "5px" }}>
+                                <CustomTooltip title={damageType} arrow placement="top">
+                                    <img src={`${process.env.REACT_APP_URL}/cores/Core_${damageType}.png`} alt={damageType} style={CoreStrengthImage} />
+                                </CustomTooltip>
+                                {coreStrengths.map(core => {
+                                    return (
+                                        <CustomTooltip title={core} arrow placement="top">
+                                            <img src={`${process.env.REACT_APP_URL}/cores/Core_${core.split(" ").join("_")}.png`} alt={core} key={core} style={CoreStrengthImage} />
+                                        </CustomTooltip>
+                                    )
+                                })}
                             </Box>
                         </Box>
                     </Grid>
