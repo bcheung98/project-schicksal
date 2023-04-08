@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import { CustomTooltip } from "../../helpers/CustomTooltip";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
+import BattlesuitSkills from "./BattlesuitSkills";
 
 const BattlesuitPage = (props) => {
 
@@ -104,9 +105,9 @@ const BattlesuitPage = (props) => {
                                     <img src={`${process.env.REACT_APP_URL}/cores/Core_${damageType}.png`} alt={damageType} style={CoreStrengthImage} />
                                 </CustomTooltip>
                                 {
-                                    coreStrengths.map(core => {
+                                    coreStrengths.map((core, index) => {
                                         return (
-                                            <CustomTooltip title={core} arrow placement="top">
+                                            <CustomTooltip key={index} title={core} arrow placement="top">
                                                 <img src={`${process.env.REACT_APP_URL}/cores/Core_${core.split(" ").join("_")}.png`} alt={core} key={core} style={CoreStrengthImage} />
                                             </CustomTooltip>
                                         )
@@ -116,6 +117,7 @@ const BattlesuitPage = (props) => {
                         </Box>
                     </Grid>
                 </Grid>
+                <BattlesuitSkills skills={battlesuit.skills} />
             </React.Fragment>
         )
     }
