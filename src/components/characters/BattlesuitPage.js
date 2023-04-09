@@ -7,6 +7,7 @@ import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BattlesuitSkills from "./BattlesuitSkills";
 import BattlesuitStats from "./BattlesuitStats";
+import BattlesuitUnlockCosts from "./BattlesuitUnlockCosts";
 
 const BattlesuitPage = (props) => {
 
@@ -117,7 +118,14 @@ const BattlesuitPage = (props) => {
                             </Box>
                         </Box>
                         <hr style={{ border: `.5px solid ${theme.border.color}`, margin: "15px" }} />
-                        <BattlesuitStats stats={battlesuit.stats} />
+                        <Grid container>
+                            <Grid xs={6}>
+                                <BattlesuitStats stats={battlesuit.stats} />
+                            </Grid>
+                            <Grid xs={6}>
+                                <BattlesuitUnlockCosts unlockCosts={battlesuit.rankUp} />
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
                 <BattlesuitSkills battlesuit={name} skills={battlesuit.skills} />
