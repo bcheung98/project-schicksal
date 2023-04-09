@@ -11,6 +11,8 @@ import { fetchCharacters } from "./redux/actions/fetchCharacters";
 import CharacterBrowser from "./components/characters/CharacterBrowser";
 import Nav from "./components/Nav";
 import BattlesuitPage from "./components/characters/BattlesuitPage";
+import { AppBar, Typography, Box, IconButton } from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const theme = createTheme({
     appbar: {
@@ -55,6 +57,20 @@ const App = (props) => {
                 </Switch>
                 <br /><br />
             </Router>
+            <AppBar position="static" sx={{
+                mb: -5,
+                pt: 2,
+                textAlign: "center",
+                backgroundColor: `${theme.appbar.backgroundColor}`,
+                borderTop: "1px solid rgb(83, 71, 60)"
+            }}>
+                <Typography sx={{ mb: "5px", fontWeight: "500" }} variant="body2">Project Elysia is not affiliated with HoYoverse.<br />Honkai Impact 3rd, images and data are registered trademarks of HoYoverse.</Typography>
+                <Box>
+                    <IconButton disableRipple href={"https://github.com/bcheung98/project-elysia"} target="_blank" color="inherit">
+                        <GitHubIcon />
+                    </IconButton>
+                </Box>
+            </AppBar>
         </ThemeProvider>
     );
 }
