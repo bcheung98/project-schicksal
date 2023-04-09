@@ -25,6 +25,12 @@ const theme = createTheme({
     },
     border: {
         color: "rgb(83, 71, 60)",
+    },
+    table: {
+        head: {
+            backgroundColor: "rgb(20, 19, 27)",
+        },
+        border: "rgb(83, 71, 60)",
     }
 });
 

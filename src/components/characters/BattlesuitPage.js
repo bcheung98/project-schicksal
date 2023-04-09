@@ -6,6 +6,7 @@ import { CustomTooltip } from "../../helpers/CustomTooltip";
 import { Box, Typography } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2";
 import BattlesuitSkills from "./BattlesuitSkills";
+import BattlesuitStats from "./BattlesuitStats";
 
 const BattlesuitPage = (props) => {
 
@@ -115,6 +116,8 @@ const BattlesuitPage = (props) => {
                                 }
                             </Box>
                         </Box>
+                        <hr style={{ border: `.5px solid ${theme.border.color}`, margin: "15px" }} />
+                        <BattlesuitStats stats={battlesuit.stats} />
                     </Grid>
                 </Grid>
                 <BattlesuitSkills battlesuit={name} skills={battlesuit.skills} />
