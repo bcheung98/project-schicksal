@@ -11,6 +11,7 @@ export const StyledTableCell = styled((props) => (
         fontFamily: "Roboto, sans-serif",
     },
     color: "white",
+    backgroundColor: `${theme.table.body.backgroundColor}`,
     fontSize: "10pt",
     fontFamily: "Roboto, sans-serif",
     border: `1px solid ${theme.table.border}`,

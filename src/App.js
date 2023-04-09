@@ -30,6 +30,9 @@ const theme = createTheme({
         head: {
             backgroundColor: "rgb(20, 19, 27)",
         },
+        body: {
+            backgroundColor: "rgb(34, 28, 36)"
+        },
         border: "rgb(83, 71, 60)",
     }
 });

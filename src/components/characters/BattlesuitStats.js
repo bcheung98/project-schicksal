@@ -19,13 +19,15 @@ const BattlesuitStats = (props) => {
         >
             <Table sx={{ backgroundColor: theme.paper.backgroundColor }}>
                 <TableHead>
-                    <StyledTableCell>Rank</StyledTableCell>
-                    <StyledTableCell>Level</StyledTableCell>
-                    <StyledTableCell>HP</StyledTableCell>
-                    <StyledTableCell>SP</StyledTableCell>
-                    <StyledTableCell>ATK</StyledTableCell>
-                    <StyledTableCell>DEF</StyledTableCell>
-                    <StyledTableCell>CRIT</StyledTableCell>
+                    <TableRow>
+                        <StyledTableCell>Rank</StyledTableCell>
+                        <StyledTableCell>Level</StyledTableCell>
+                        <StyledTableCell>HP</StyledTableCell>
+                        <StyledTableCell>SP</StyledTableCell>
+                        <StyledTableCell>ATK</StyledTableCell>
+                        <StyledTableCell>DEF</StyledTableCell>
+                        <StyledTableCell>CRIT</StyledTableCell>
+                    </TableRow>
                 </TableHead>
                 <TableBody>
                     {

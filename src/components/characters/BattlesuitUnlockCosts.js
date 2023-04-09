@@ -31,8 +31,10 @@ const BattlesuitUnlockCosts = (props) => {
             >
                 <Table sx={{ backgroundColor: theme.paper.backgroundColor }}>
                     <TableHead>
-                        <StyledTableCell>Rank</StyledTableCell>
-                        <StyledTableCell>Fragments Required</StyledTableCell>
+                        <TableRow>
+                            <StyledTableCell>Rank</StyledTableCell>
+                            <StyledTableCell>Fragments Required</StyledTableCell>
+                        </TableRow>
                     </TableHead>
                     <TableBody>
                         {
