@@ -64,7 +64,9 @@ const App = (props) => {
                 backgroundColor: `${theme.appbar.backgroundColor}`,
                 borderTop: "1px solid rgb(83, 71, 60)"
             }}>
-                <Typography sx={{ mb: "5px", fontWeight: "500" }} variant="body2">Project Elysia is not affiliated with HoYoverse.<br />Honkai Impact 3rd, images and data are registered trademarks of HoYoverse.</Typography>
+                <Typography sx={{ mb: "5px", fontWeight: "500" }} variant="body2">
+                    Project Elysia is not affiliated with HoYoverse.<br /><i>Honkai Impact 3rd</i>, images and data are registered trademarks of HoYoverse.
+                </Typography>
                 <Box>
                     <IconButton disableRipple href={"https://github.com/bcheung98/project-elysia"} target="_blank" color="inherit">
                         <GitHubIcon />
