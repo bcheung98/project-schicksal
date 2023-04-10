@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/project-elysia/static/css/main.14114cde.css",
-    "main.js": "/project-elysia/static/js/main.be7546b7.js",
+    "main.js": "/project-elysia/static/js/main.e722b00d.js",
     "index.html": "/project-elysia/index.html",
     "main.14114cde.css.map": "/project-elysia/static/css/main.14114cde.css.map",
-    "main.be7546b7.js.map": "/project-elysia/static/js/main.be7546b7.js.map"
+    "main.e722b00d.js.map": "/project-elysia/static/js/main.e722b00d.js.map"
   },
   "entrypoints": [
     "static/css/main.14114cde.css",
-    "static/js/main.be7546b7.js"
+    "static/js/main.e722b00d.js"
   ]
 }
