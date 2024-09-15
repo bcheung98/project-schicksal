@@ -1,4 +1,4 @@
-# **PROJECT ELYSIA** (WIP)
+# **PROJECT SCHICKSAL** (WIP)
 
 A database website for the action role-playing game *[Honkai Impact 3rd](https://honkaiimpact3.hoyoverse.com/global/en-us/home)*.
 

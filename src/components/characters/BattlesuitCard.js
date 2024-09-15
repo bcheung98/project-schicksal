@@ -33,7 +33,7 @@ const BattlesuitCard = (props) => {
 
     return (
         <Box>
-            <ButtonBase disableRipple href={`/project-elysia/characters/${props.character.split(" ").join("_")}/${name.split(" ").join("_")}`} target="_blank">
+            <ButtonBase disableRipple href={`/project-schicksal/characters/${props.character.split(" ").join("_")}/${name.split(" ").join("_")}`} target="_blank">
                 <Box
                     sx={{
                         width: "132px",

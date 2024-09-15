@@ -17,11 +17,11 @@ const Nav = () => {
                 <Toolbar disableGutters>
                     <ButtonBase
                         disableRipple
-                        href={`/project-elysia/`}
+                        href={`/project-schicksal/`}
                     >
                         <CardHeader
                             avatar={
-                                <Avatar src={(`${process.env.REACT_APP_URL}/Crystal_Rose.png`)} alt="PROJECT ELYSIA" sx={{ height: "64px", width: "64px" }} />
+                                <Avatar src={(`${process.env.REACT_APP_URL}/Crystal_Rose.png`)} alt="PROJECT SCHICKSAL" sx={{ height: "64px", width: "64px" }} />
                             }
                             title={
                                 <Typography variant="h6" noWrap
@@ -33,7 +33,7 @@ const Nav = () => {
                                         textDecoration: "none",
                                     }}
                                 >
-                                    PROJECT ELYSIA
+                                    PROJECT SCHICKSAL
                                 </Typography>
                             }
                         />

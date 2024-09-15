@@ -1,8 +1,8 @@
 {
-  "name": "project-elysia",
+  "name": "project-schicksal",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bcheung98.github.io/project-elysia",
+  "homepage": "https://bcheung98.github.io/project-schicksal",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
